@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SKI Awards</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,li,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #4c1d6c;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+.title{
+    background-color: #4c1d6c;
+    border-radius: 10px 100px;
+
+}
+.title li{
+text-align: left;
+color: #ffffff;
+font-size: xx-large;
+font-family: 'Times New Roman', Times, serif;
+}
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Make the images invisible by default */
+.Containers {
+  display: none;
+  border-radius: 30px 30px;
+}
+
+/* forward & Back buttons */
+.Back, .forward {
+  cursor: pointer;
+  position: absolute;
+  top: 48%;
+  width: auto;
+  margin-top: -23px;
+  padding: 17px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 19px;
+  transition: 0.4s ease;
+  border-radius: 0 5px 5px 0;
+  user-select: none;
+}
+
+/* Place the "forward button" to the right */
+.forward {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+/*when the user hovers,add a black background with some little opacity */
+.Back:hover, .forward:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption Info */
+.Info {
+  background-color: #4c1d6c;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 14px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Worknumbering (1/3 etc) */
+.MessageInfo {
+  color: #f2f2f3;
+  font-size: 14px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 0;
+}
+
+/* The circles or bullets and indicators */
+.dots {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
+  background-color: #acc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.enable, .dots:hover {
+  background-color: #717161;
+}
+
+/* Faint animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+
+
+@-webkit-keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="SKIlogo.png" width= "65%"> 
+  <a href="Home.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="movie.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-tv w3-xxlarge"></i>
+    <p>Movies</p>
+  </a>
+  <a href="review.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-thumbs-o-up w3-xxlarge"></i>
+    <p>review</p>
+  </a>
+  <a href="Awards.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-trophy w3-xxlarge"></i>
+    <p>Awards</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="Home.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<div class="w3-padding-large" id="main">
+  <!-- SKI Awards -->
+  <header class="title" id="home">
+    <ul>
+      <li>SKI Awards 2023</li> 
+    </ul>
+    
+ </header>
+
+<div class="BestactorInternational">
+<h1> Best Actor International</h1>
+<li>  Robert Partison-The Batman(winner)</li>
+<li> Colin Farrell-The Batman</li>
+<li> Ke Huy Quan-Everything everywhere all at once</li>
+<li> Hugh Jackman-The Son</li>
+<li>Tenoch Huerta- Black Panther wokanda forever</li> 
+</div>
+
+<div class="BestactorIndia">
+  <h1> Best Actor India</h1>
+  <li> Jr. NTR-RRR</li>
+  <li> Rishab Shetty-Kantara(winner)</li>
+  <li> Anupam Kher-The Kashmir Files </li>
+  <li> Vijay Sethupathi-Vikram</li>
+  <li> Ram Charan-RRR</li>
+ <li>R. Madhavan-Rocketry the nambi effect(Winner)</li> 
+  </div>
+
+  <div class="Bestactressinternational">
+    <h1> Best Actress International</h1>
+    <li>  Robert Partison-The Batman(winner)</li>
+    <li> Colin Farrell-The Batman</li>
+    </div>
+    <div class="BestactorIndia">
+      <h1> Best Actor International</h1>
+      <li>  Robert Partison-The Batman(winner)</li>
+      <li> Colin Farrell-The Batman</li>
+      <li> Ke Huy Quan-Everything everywhere all at once</li>
+      <li> Ke Huy Quan-Everything everywhere all at once</li>
+      <li> Hugh Jackman-The Son</li>
+      <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+      </div>
+      <div class="BestactorIndia">
+        <h1> Best Actor International</h1>
+        <li>  Robert Partison-The Batman(winner)</li>
+        <li> Colin Farrell-The Batman</li>
+        <li> Ke Huy Quan-Everything everywhere all at once</li>
+        <li> Ke Huy Quan-Everything everywhere all at once</li>
+        <li> Hugh Jackman-The Son</li>
+        <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+        </div>
+        <div class="BestactorIndia">
+          <h1> Best Actor International</h1>
+          <li>  Robert Partison-The Batman(winner)</li>
+          <li> Colin Farrell-The Batman</li>
+          <li> Ke Huy Quan-Everything everywhere all at once</li>
+          <li> Ke Huy Quan-Everything everywhere all at once</li>
+          <li> Hugh Jackman-The Son</li>
+          <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+          </div>
+          <div class="BestactorIndia">
+            <h1> Best Actor International</h1>
+            <li>  Robert Partison-The Batman(winner)</li>
+            <li> Colin Farrell-The Batman</li>
+            <li> Ke Huy Quan-Everything everywhere all at once</li>
+            <li> Ke Huy Quan-Everything everywhere all at once</li>
+            <li> Hugh Jackman-The Son</li>
+            <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+            </div>
+            <div class="BestactorIndia">
+              <h1> Best Actor International</h1>
+              <li>  Robert Partison-The Batman(winner)</li>
+              <li> Colin Farrell-The Batman</li>
+              <li> Ke Huy Quan-Everything everywhere all at once</li>
+              <li> Ke Huy Quan-Everything everywhere all at once</li>
+              <li> Hugh Jackman-The Son</li>
+              <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+              </div>
+              <div class="BestactorIndia">
+                <h1> Best Actor International</h1>
+                <li>  Robert Partison-The Batman(winner)</li>
+                <li> Colin Farrell-The Batman</li>
+                <li> Ke Huy Quan-Everything everywhere all at once</li>
+                <li> Ke Huy Quan-Everything everywhere all at once</li>
+                <li> Hugh Jackman-The Son</li>
+                <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+                </div>
+                <div class="BestactorIndia">
+                  <h1> Best Actor International</h1>
+                  <li>  Robert Partison-The Batman(winner)</li>
+                  <li> Colin Farrell-The Batman</li>
+                  <li> Ke Huy Quan-Everything everywhere all at once</li>
+                  <li> Ke Huy Quan-Everything everywhere all at once</li>
+                  <li> Hugh Jackman-The Son</li>
+                  <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+                  </div>
+                  <div class="BestactorIndia">
+                    <h1> Best Actor International</h1>
+                    <li>  Robert Partison-The Batman(winner)</li>
+                    <li> Colin Farrell-The Batman</li>
+                    <li> Ke Huy Quan-Everything everywhere all at once</li>
+                    <li> Ke Huy Quan-Everything everywhere all at once</li>
+                    <li> Hugh Jackman-The Son</li>
+                    <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+                    </div>
+                    <div class="BestactorIndia">
+                      <h1> Best Actor International</h1>
+                      <li>  Robert Partison-The Batman(winner)</li>
+                      <li> Colin Farrell-The Batman</li>
+                      <li> Ke Huy Quan-Everything everywhere all at once</li>
+                      <li> Ke Huy Quan-Everything everywhere all at once</li>
+                      <li> Hugh Jackman-The Son</li>
+                      <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+                      </div>
+                      <div class="BestactorIndia">
+                        <h1> Best Actor International</h1>
+                        <li>  Robert Partison-The Batman(winner)</li>
+                        <li> Colin Farrell-The Batman</li>
+                        <li> Ke Huy Quan-Everything everywhere all at once</li>
+                        <li> Ke Huy Quan-Everything everywhere all at once</li>
+                        <li> Hugh Jackman-The Son</li>
+                        <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+                        </div>
+                        <div class="BestactorIndia">
+                          <h1> Best Actor International</h1>
+                          <li>  Robert Partison-The Batman(winner)</li>
+                          <li> Colin Farrell-The Batman</li>
+                          <li> Ke Huy Quan-Everything everywhere all at once</li>
+                          <li> Ke Huy Quan-Everything everywhere all at once</li>
+                          <li> Hugh Jackman-The Son</li>
+                          <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+                          </div>
+                          <div class="BestactorIndia">
+                            <h1> Best Actor International</h1>
+                            <li>  Robert Partison-The Batman(winner)</li>
+                            <li> Colin Farrell-The Batman</li>
+                            <li> Ke Huy Quan-Everything everywhere all at once</li>
+                            <li> Ke Huy Quan-Everything everywhere all at once</li>
+                            <li> Hugh Jackman-The Son</li>
+                            <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+                            </div>
+                            <div class="BestactorIndia">
+                              <h1> Best Actor International</h1>
+                              <li>  Robert Partison-The Batman(winner)</li>
+                              <li> Colin Farrell-The Batman</li>
+                              <li> Ke Huy Quan-Everything everywhere all at once</li>
+                              <li> Ke Huy Quan-Everything everywhere all at once</li>
+                              <li> Hugh Jackman-The Son</li>
+                              <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+                              </div>
+                              <div class="BestactorIndia">
+                                <h1> Best Actor International</h1>
+                                <li>  Robert Partison-The Batman(winner)</li>
+                                <li> Colin Farrell-The Batman</li>
+                                <li> Ke Huy Quan-Everything everywhere all at once</li>
+                                <li> Ke Huy Quan-Everything everywhere all at once</li>
+                                <li> Hugh Jackman-The Son</li>
+                                <li>Tenoch Huerta- Black Panther wokanda forever</li> 
+                                </div>
+
+                                <div class="w3-row-padding w3-grayscale">
+                                  <div class="w3-col l3 m6 w3-margin-bottom">
+                                    <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+                                    <h3></h3>
+                                    <p class="w3-opacity">CEO & Founder</p>
+                                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                                    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+                                  </div>
+                          
+                                  <div class="w3-row-padding w3-grayscale">
+                                    <div class="w3-col l3 m6 w3-margin-bottom">
+                                      <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+                                      <h3></h3>
+                                      <p class="w3-opacity">CEO & Founder</p>
+                                      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                                      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+                                    </div>
+
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <p> <u>CONTACTS</u> </p>
+   <a href= "https://www.instagram.com/shrikurmainternational/"> <i class="fa fa-instagram -official w3-hover-opacity"></i></a>
+   <a href= "https://www.linkedin.com/in/divya-prakash-7a085b23a/"> <i class="fa fa-linkedin -official w3-hover-opacity"></i></a>
+   <a href= ""> <i class="fa fa-twitter -official w3-hover-opacity"></i></a>
+
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shri Kruma International</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/* Your existing CSS styles here */
+
+body, h1, h2, li, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.w3-row-padding img {
+  margin-bottom: 12px;
+}
+
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {
+  width: 120px;
+  background: #4c1d6c;
+}
+
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {
+  margin-left: 120px;
+}
+
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {
+  #main {
+    margin-left: 0;
+  }
+}
+
+.title {
+  background-color: #4c1d6c;
+  border-radius: 10px 100px;
+}
+
+.title li {
+  text-align: left;
+  color: #ffffff;
+  font-size: xx-large;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Star Rating Styles */
+.ratingStars {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.fa-star {
+  font-size: 24px;
+  color: rgb(143, 95, 95);
+  cursor: pointer;
+}
+
+.checked {
+  color: orange;
+}
+
+.submit-review-btn {
+  margin-top: 10px;
+  text-align: left;
+}
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in the top left corner -->
+  <img src="SKIlogo.png" width="65%">
+  <!-- Navigation links -->
+  <a href="Home.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="movie.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-tv w3-xxlarge"></i>
+    <p>Movies</p>
+  </a>
+  <a href="review.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-thumbs-o-up w3-xxlarge"></i>
+    <p>Review</p>
+  </a>
+  <a href="Awards.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-trophy w3-xxlarge"></i>
+    <p>Awards</p>
+  </a>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="title" id="home">
+    <ul>
+      <li>SKI Review</li>
+    </ul>
+  </header>
+
+  <!-- Contact Section -->
+  <div>
+    <h6>Username :</h6>
+    <input type="text" placeholder="Enter Username" id="username" required>
+  </div>
+  <h6> Place Review :</h6>
+  <textarea rows="5" cols="80" id="reviewText" placeholder="Review"></textarea>
+
+  <!-- Star Rating -->
+  <h6>Stars:</h6>
+  <div class="ratingStars" id="ratingStars"></div>
+
+  <!-- Submit Review Button -->
+  <div class="submit-review-btn">
+    <button class="w3-button w3-white w3-section" type="button" id="submitReview">
+      <i class="fa fa-comment"></i> Submit Review
+    </button>
+  </div>
+
+  <!-- Reviews Display Area -->
+  <h6> Reviews :</h6>
+  <div id="reviewDisplayArea">
+    <!-- Reviews will be displayed here -->
+  </div>
+</div>
+
+<!-- Your existing footer code here -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const reviewText = document.getElementById("reviewText");
+    const reviewDisplayArea = document.getElementById("reviewDisplayArea");
+    const submitReviewButton = document.getElementById("submitReview");
+    const ratingStarsContainer = document.getElementById("ratingStars");
+    let currentRating = 0;
+
+    function updateRatingStars() {
+      ratingStarsContainer.innerHTML = '';
+
+      for (let i = 1; i <= 10; i++) {
+        const star = document.createElement("span");
+        star.className = "fa fa-star" + (i <= currentRating ? " checked" : "");
+        star.addEventListener("click", function() {
+          if (currentRating === i) {
+            currentRating = i - 1;
+          } else {
+            currentRating = i;
+          }
+          updateRatingStars();
+        });
+        ratingStarsContainer.appendChild(star);
+      }
+    }
+
+    updateRatingStars(); // Initial update
+
+    submitReviewButton.addEventListener("click", function () {
+      const username = document.getElementById("username").value;
+      const review = reviewText.value;
+
+      if (username && review) {
+        const reviewElement = document.createElement("div");
+        reviewElement.innerHTML = `
+          <h6>Username: ${username}</h6>
+          <p>Review: ${review}</p>
+          <p>Rating: ${currentRating} / 10</p>
+          <hr>
+        `;
+
+        reviewDisplayArea.appendChild(reviewElement);
+
+        // Clear the form inputs
+        reviewText.value = '';
+        currentRating = 0;
+        updateRatingStars(); // Reset star display
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
